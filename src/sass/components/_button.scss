@@ -34,7 +34,10 @@
   }
   .btn_trans {
     background: none;
-    border: 1.5px solid $gray-bg;
+    @include medium {
+      border: 1.5px solid $gray-bg;
+    }
+    border: 1.5px solid $gray-light-bg;
     color: $txt-main-color;
     &:hover {
       background: $btn-main-bg-dark;

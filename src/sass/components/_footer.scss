@@ -9,6 +9,11 @@
   &_wrapper {
     border-top: 1px solid $btn-main-trans2;
     border-bottom: 1px solid $btn-main-trans2;
+    @media only screen and (max-width: 850px) {
+      display: grid;
+      grid-template-columns: 1fr;
+      border-bottom: none;
+    }
     &_left {
       padding: 50px 0px;
       border-right: 1px solid $btn-main-trans2;
@@ -20,6 +25,12 @@
         }
       }
       &_link {
+        @media only screen and (max-width: 540px) {
+          flex-direction: column;
+          ul {
+            margin-bottom: 20px;
+          }
+        }
         @include flex(flex-start, flex-start);
         ul {
           margin-right: 80px;
@@ -32,12 +43,22 @@
     }
     &_right {
       @include flex-align(center);
-      margin-left: 50px;
+      margin-left: 30px;
+      @include large {
+        margin-left: 50px;
+      }
+      @media only screen and (max-width: 850px) {
+        margin-left: 0;
+        margin-right: 20px;
+      }
       &_map {
-        width: 470px;
+        display: inline-flex;
         img {
-          width: 100%;
+          flex-basis: 470px;
+          height: 300px;
           border-radius: 8px;
+          object-fit: cover;
+          flex-grow: 1;
         }
       }
     }
@@ -47,9 +68,18 @@
     padding: 20px 0px;
     &_copy_right {
       text-align: center;
+      @media only screen and (max-width: 560px) {
+        text-align: left;
+        margin-left: 30px;
+      }
     }
     &_social_link {
       position: absolute;
+      @media only screen and (max-width: 560px) {
+        position: relative;
+        margin-left: 40px;
+        margin-top: 30px;
+      }
       right: 15px;
       bottom: 15px;
       margin-right: auto;

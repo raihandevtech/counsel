@@ -6,9 +6,16 @@
       h2 {
         color: $txt-white;
       }
+      margin-bottom: 30px;
+      @include medium {
+        margin-bottom: 0;
+      }
     }
     &_right {
-      margin-left: 50px;
+      margin-left: 0px;
+      @include medium {
+        margin-left: 50px;
+      }
       p {
         color: $txt-dark-white;
         margin-bottom: 35px;

@@ -3,27 +3,22 @@
   background: $gray-bg-light;
   padding: 100px 0px;
   &_main {
-    // @include flex-align(center);
-    // &_item {
-    //   .comment {
-    //     display: none;
-    //     &.active {
-    //       display: block;
-    //     }
-    //   }
-    //   .image {
-    //     width: 400px;
-
-    //   }
-    // }
     display: flex;
     flex-direction: column;
     justify-content: center;
     &_comment {
+      max-width: 900px;
+      margin: 0 auto;
       .comment {
         display: none;
         &.active {
+          margin-bottom: 25px;
           display: block;
+          p {
+            text-align: center;
+            font-style: italic;
+            font-size: 22px;
+          }
         }
       }
     }
@@ -33,27 +28,85 @@
       overflow: hidden;
       @include flex(center, center);
       position: relative;
+      margin: 0 auto;
       .image {
         width: 100%;
         &_single {
-          margin: 0px 80px;
+          margin: 0px 70px;
           img {
             min-width: 50px;
             min-height: 50px;
             object-fit: cover;
             border-radius: 50%;
+            transition: all 0.4s ease;
+            transform: scale(1);
           }
           &.active {
-            margin: none;
+            margin: 0px 0px;
             position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
             img {
-              min-width: 80px;
-              min-height: 80px;
-              width: 100%;
-              height: 100%;
+              width: 76px;
+              height: 76px;
+              transform: scale(1.2);
             }
+          }
+        }
+      }
+    }
+
+    .person {
+      margin: 0 auto;
+      display: none;
+      &_name {
+        h3 {
+          text-align: center;
+        }
+        span {
+          text-align: center;
+          font-size: 15px;
+        }
+      }
+      &.active {
+        display: block;
+        margin-top: 10px;
+      }
+    }
+  }
+  .container {
+    position: relative;
+    .testimonial_control {
+      &_item {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: $txt-white;
+        top: 50%;
+        transform: translateY(-50%);
+        &:hover {
+          background: $btn-main-bg;
+          .icon {
+            color: $txt-white;
+          }
+        }
+        .icon {
+          font-size: 30px;
+          color: $txt-main-color;
+          margin-top: 10px;
+        }
+        &.left {
+          left: 0;
+          .icon {
+            margin-left: 7px;
+          }
+        }
+        &.right {
+          right: 0;
+          .icon {
+            margin-left: 9px;
           }
         }
       }

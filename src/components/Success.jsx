@@ -6,7 +6,7 @@ function Success() {
   return (
     <div className="success">
       <div className="container">
-        <div className="success_wrapper grid grid-col-md-2 grid-col-sm-1">
+        <div className="success_wrapper">
           <div className="success_wrapper_left">
             <div className="success_wrapper_left_video">
               <div className="success_wrapper_left_video_thumb">
@@ -16,11 +16,11 @@ function Success() {
                   </a>
                 </div>
                 <img src={thumb} alt="" />
-              </div>
-              <div className="success_wrapper_left_video_lawyer">
-                <div className="success_wrapper_left_video_lawyer_main">
-                  <h4>10+</h4>
-                  <p>Lawyer</p>
+                <div className="success_wrapper_left_video_thumb_lawyer">
+                  <div className="success_wrapper_left_video_thumb_lawyer_main">
+                    <h4>10+</h4>
+                    <p>Lawyer</p>
+                  </div>
                 </div>
               </div>
             </div>

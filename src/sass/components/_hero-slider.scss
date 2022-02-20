@@ -6,6 +6,8 @@
     width: 80px;
     top: 40px;
     left: 30%;
+    opacity: 0;
+    visibility: hidden;
   }
   .shape2 {
     position: absolute;
@@ -13,6 +15,8 @@
     left: 40%;
     width: 60px;
     z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
   }
   .shape3 {
     position: absolute;
@@ -20,12 +24,37 @@
     left: 50%;
     width: 40px;
     z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+  }
+  @include large {
+    .shape1 {
+      opacity: 1;
+      visibility: visible;
+    }
+    .shape2 {
+      opacity: 1;
+      visibility: visible;
+    }
+    .shape3 {
+      opacity: 1;
+      visibility: visible;
+    }
   }
   &_wrapper {
-    @include flex(felx-start, space-between);
+    @include medium {
+      @include flex(felx-start, space-between);
+    }
+
     &_left {
-      width: 40%;
-      margin-top: -70px;
+      margin-bottom: -100px;
+      @include medium {
+        width: 40%;
+        margin-top: -70px;
+        margin-bottom: 0;
+      }
+      width: 100%;
+      margin-top: -130px;
       .law {
         padding: 5px 20px;
         background: $gray-bg;
@@ -36,8 +65,10 @@
         margin-bottom: 32px;
       }
       .desc {
-        max-width: 440px;
         margin-bottom: 40px;
+        @include medium {
+          max-width: 440px;
+        }
       }
       &_btn {
         @include flex-align(center);
@@ -47,22 +78,44 @@
       }
     }
     &_right {
-      width: 60%;
+      width: 100%;
+      @include medium {
+        width: 60%;
+        margin-top: 0;
+      }
       position: relative;
       .shape4 {
+        opacity: 0;
+        visibility: hidden;
         position: absolute;
         height: 270px;
         top: -17px;
-        right: 515px;
+        right: 0px;
+        @include medium {
+          right: 515px;
+        }
         img {
           height: 100%;
           object-fit: contain;
         }
+        @include large {
+          opacity: 1;
+          visibility: visible;
+        }
       }
       .review {
+        min-width: 300px;
+        @include medium {
+          right: 320px;
+        }
+        @include large {
+          right: 362px;
+        }
+        @media only screen and (min-width: 665px) {
+          top: -80px;
+        }
         position: absolute;
-        top: -80px;
-        right: 412px;
+        top: -178px;
         @include flex-align(center);
         &_single {
           @include flex-align(center);
@@ -103,6 +156,10 @@
       }
       .ceo {
         position: relative;
+        margin-top: 340px;
+        @include medium {
+          margin-top: 0;
+        }
         &_bg {
           width: 420px;
           height: 420px;
@@ -113,7 +170,7 @@
         }
         &_img {
           position: absolute;
-          top: -151px;
+          bottom: -5px;
           z-index: 900;
           max-width: 504px;
           right: -5px;

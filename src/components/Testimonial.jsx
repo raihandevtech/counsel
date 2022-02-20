@@ -1,9 +1,11 @@
 import { useState, useCallback, useEffect } from "react";
 import { testimonial } from "./data/tsml";
+import ArrowBackIcon from "@material-ui/icons/ArrowBack";
+import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 
 function Testimonial() {
   const timeOut = 3000;
-  const auto = false;
+  const auto = true;
   const [activeSlide, setActiveSlide] = useState(0);
 
   const nextSlide = useCallback(() => {
@@ -29,32 +31,42 @@ function Testimonial() {
   }, [nextSlide, timeOut]);
   return (
     <div className="testimonial">
-      <div className="testimonial_main container">
-        {testimonial.map((item, index) => (
-          <div className="testimonial_main_comment">
-            <TestimonialComment
-              key={index}
-              comment={item.comment}
-              active={index === activeSlide}
-            />
-          </div>
-        ))}
-        <div className="testimonial_main_image">
+      <div className="container">
+        <div className="testimonial_main container">
           {testimonial.map((item, index) => (
-            <TestimonialImage
+            <div className="testimonial_main_comment">
+              <TestimonialComment
+                key={index}
+                comment={item.comment}
+                active={index === activeSlide}
+              />
+            </div>
+          ))}
+          <div className="testimonial_main_image">
+            {testimonial.map((item, index) => (
+              <TestimonialImage
+                key={index}
+                image={item.img}
+                active={index === activeSlide}
+              />
+            ))}
+          </div>
+          {testimonial.map((item, index) => (
+            <TestimonialName
               key={index}
-              image={item.img}
+              item={item}
               active={index === activeSlide}
             />
           ))}
         </div>
-        {testimonial.map((item, index) => (
-          <TestimonialName
-            key={index}
-            item={item}
-            active={index === activeSlide}
-          />
-        ))}
+        <div className="testimonial_control">
+          <div className="testimonial_control_item left" onClick={prevSlide}>
+            <ArrowBackIcon className="icon" />
+          </div>
+          <div className="testimonial_control_item right" onClick={nextSlide}>
+            <ArrowForwardIcon className="icon" />
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -80,7 +92,7 @@ function TestimonialImage({ image, active }) {
 
 function TestimonialName({ item, active }) {
   return (
-    <div className="person">
+    <div className={`person ${active ? "active" : ""}`}>
       <div className="person_name">
         <h3>{item.name}</h3>
         <span>{item.occap}</span>
