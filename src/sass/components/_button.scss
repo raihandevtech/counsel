@@ -1,0 +1,45 @@
+.btn {
+  &_main {
+    cursor: pointer;
+    border-radius: 4px;
+    border: 0;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.1s ease-in-out;
+    @include flex-align(center);
+  }
+  .btn_medium {
+    height: 40px;
+    padding: 0px 30px;
+  }
+  .btn_black {
+    background: $btn-black;
+    color: $txt-white;
+
+    &:hover {
+      background: $btn-black-light;
+    }
+  }
+  .btn_large {
+    height: 46px;
+    padding: 0px 35px;
+    color: $txt-white;
+  }
+  .btn_orange {
+    background: $btn-main-bg;
+    color: $txt-white;
+    &:hover {
+      background: $btn-main-bg-dark;
+    }
+  }
+  .btn_trans {
+    background: none;
+    border: 1.5px solid $gray-bg;
+    color: $txt-main-color;
+    &:hover {
+      background: $btn-main-bg-dark;
+      color: $txt-white;
+      border: none;
+    }
+  }
+}

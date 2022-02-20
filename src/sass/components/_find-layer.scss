@@ -1,0 +1,18 @@
+.find_lawyer {
+  padding: 120px 0px;
+  background-color: $gray-dark-bg;
+  &_wrapper {
+    &_left {
+      h2 {
+        color: $txt-white;
+      }
+    }
+    &_right {
+      margin-left: 50px;
+      p {
+        color: $txt-dark-white;
+        margin-bottom: 35px;
+      }
+    }
+  }
+}

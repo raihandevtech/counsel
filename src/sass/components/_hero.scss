@@ -1,0 +1,23 @@
+// .hero {
+//   &_bg {
+//     position: absolute;
+//     width: 300px;
+//     height: 100%;
+//     background: $gray-bg;
+//   }
+// }
+
+.hero_bg {
+  position: relative;
+  &::before {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    width: 500px;
+    height: 820px;
+    right: -178px;
+    top: 0;
+    background: $gray-bg;
+    border-bottom-left-radius: 35px;
+  }
+}

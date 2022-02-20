@@ -1,0 +1,71 @@
+.services {
+  margin-top: 100px;
+  &_wrapper {
+    &_left {
+      margin-top: 40px;
+      padding-right: 50px;
+      h2 {
+        margin-bottom: 30px;
+      }
+      p {
+        margin-bottom: 30px;
+      }
+      .read-more {
+        cursor: pointer;
+        color: $txt-orange;
+        &:hover {
+          color: $txt-dark-orange;
+        }
+      }
+    }
+    &_right {
+      &_law {
+        &_list {
+          h4 {
+            position: relative;
+            padding: 0px 20px;
+            height: 60px;
+            @include flex-align(center);
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            &:hover {
+              box-shadow: $box-shadow;
+              .arrow {
+                .icon {
+                  color: $txt-orange;
+                }
+              }
+            }
+            &.active {
+              box-shadow: $box-shadow;
+              .arrow {
+                .icon {
+                  color: $txt-orange;
+                }
+              }
+            }
+            .count {
+              font-size: 18px;
+              color: $txt-gray;
+              margin-right: 10px;
+            }
+            .arrow {
+              position: absolute;
+              right: 10px;
+              top: 11px;
+
+              .icon {
+                font-size: 32px;
+                transform: rotate(-46deg);
+              }
+            }
+          }
+          p {
+            padding: 10px 30px;
+            padding-right: 10px;
+          }
+        }
+      }
+    }
+  }
+}

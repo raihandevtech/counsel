@@ -1,0 +1,29 @@
+.header {
+  padding: 25px 0;
+  &_wrapper {
+    @include flex(center, space-between);
+    &_left {
+      @include flex-align(center);
+      &_logo {
+        margin-right: 75px;
+        max-width: 140px;
+        img {
+          width: 100%;
+        }
+      }
+      &_menu {
+        ul {
+          @include flex-align(center);
+          li {
+            margin-right: 35px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            &:hover {
+              color: $txt-orange;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,140 @@
+.success {
+  margin-top: 170px;
+  &_wrapper {
+    grid-column-gap: 50px;
+    &_left {
+      &_video {
+        position: relative;
+        &_thumb {
+          max-width: 490px;
+          position: relative;
+          img {
+            width: 100%;
+            border-radius: 15px;
+          }
+          .play_button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: $btn-main-trans1;
+            transform: translate(-50%, -50%);
+            &::after {
+              position: absolute;
+              z-index: -1;
+              content: "";
+              top: 50%;
+              left: 50%;
+              width: 44px;
+              height: 44px;
+              border-radius: 50%;
+              background: $btn-main-trans2;
+              transform: translate(-50%, -50%);
+              animation: animate 1.2s infinite;
+            }
+            a {
+              margin-left: 7px;
+              width: 44px;
+              height: 44px;
+              cursor: pointer;
+              .icon {
+                margin-top: 6px;
+                font-size: 30px;
+                color: $txt-white;
+              }
+            }
+            @keyframes animate {
+              0% {
+                width: 70px;
+                height: 70px;
+              }
+              100% {
+                width: 140px;
+                height: 140px;
+                opacity: 0;
+              }
+            }
+          }
+        }
+        &_lawyer {
+          overflow: hidden;
+          position: absolute;
+          top: -62px;
+          left: 432px;
+          width: 130px;
+          height: 130px;
+          background-color: $gray-light-bg;
+          border-radius: 10px;
+          @include flex(center, center);
+          &_main {
+            position: relative;
+            &::after {
+              position: absolute;
+              content: "";
+              width: 100px;
+              height: 100px;
+              background: $gray-dark-bg;
+              transform: rotate(50deg);
+              bottom: -92px;
+              left: 50px;
+            }
+            h4 {
+              color: $txt-white;
+              text-align: center;
+            }
+            p {
+              color: $txt-white;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+    &_right {
+      margin-left: 40px;
+      &_content {
+        @include flex-align(center);
+        &_rate {
+          position: relative;
+          width: 500px;
+          .shape {
+            position: absolute;
+            display: block;
+            top: -40px;
+            left: -30px;
+            img {
+              width: 180px;
+              height: 140px;
+              object-fit: contain;
+            }
+          }
+          h1 {
+            position: absolute;
+            top: -8px;
+            left: 14px;
+          }
+        }
+        &_text {
+          margin-top: 50px;
+          position: relative;
+          h4 {
+            margin-bottom: 15px;
+          }
+          .i_mark {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: $btn-main-bg;
+            color: $txt-white;
+            @include flex(center, center);
+            top: 0;
+            left: 240px;
+          }
+        }
+      }
+    }
+  }
+}

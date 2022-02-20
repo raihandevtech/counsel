@@ -1,0 +1,128 @@
+.hero_slider {
+  padding-top: 180px;
+  position: relative;
+  .shape1 {
+    position: absolute;
+    width: 80px;
+    top: 40px;
+    left: 30%;
+  }
+  .shape2 {
+    position: absolute;
+    top: 355px;
+    left: 40%;
+    width: 60px;
+    z-index: 9999;
+  }
+  .shape3 {
+    position: absolute;
+    bottom: -48px;
+    left: 50%;
+    width: 40px;
+    z-index: 9999;
+  }
+  &_wrapper {
+    @include flex(felx-start, space-between);
+    &_left {
+      width: 40%;
+      margin-top: -70px;
+      .law {
+        padding: 5px 20px;
+        background: $gray-bg;
+        border-radius: 20px;
+      }
+      .title {
+        margin-top: 30px;
+        margin-bottom: 32px;
+      }
+      .desc {
+        max-width: 440px;
+        margin-bottom: 40px;
+      }
+      &_btn {
+        @include flex-align(center);
+        .btn {
+          margin-right: 30px;
+        }
+      }
+    }
+    &_right {
+      width: 60%;
+      position: relative;
+      .shape4 {
+        position: absolute;
+        height: 270px;
+        top: -17px;
+        right: 515px;
+        img {
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+      .review {
+        position: absolute;
+        top: -80px;
+        right: 412px;
+        @include flex-align(center);
+        &_single {
+          @include flex-align(center);
+          img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid $txt-white;
+            &:nth-child(1) {
+              z-index: 1;
+            }
+            &:nth-child(2) {
+              z-index: 2;
+              margin-left: -12px;
+            }
+            &:nth-child(3) {
+              z-index: 3;
+              margin-left: -12px;
+            }
+          }
+        }
+        &_counts {
+          margin-left: 20px;
+          p {
+            margin-bottom: 3px;
+          }
+          &_rating {
+            @include flex-align(center);
+            .star {
+              color: $txt-orange;
+            }
+            span {
+              margin-left: 4px;
+            }
+          }
+        }
+      }
+      .ceo {
+        position: relative;
+        &_bg {
+          width: 420px;
+          height: 420px;
+          border-radius: 20px;
+          background: $gray-light-bg;
+          margin-left: auto;
+          margin-right: 30px;
+        }
+        &_img {
+          position: absolute;
+          top: -151px;
+          z-index: 900;
+          max-width: 504px;
+          right: -5px;
+
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

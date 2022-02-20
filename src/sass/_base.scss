@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+html {
+  font-size: 13px;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: $txt-gray;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $txt-main-color;
+}
+h1 {
+  font-size: 52px;
+}
+h2 {
+  font-size: 44px;
+}
+h4 {
+  font-size: 24px;
+}
+
+ul {
+  list-style-type: none;
+}
+p {
+  font-size: 20px;
+  letter-spacing: 0.5px;
+  line-height: 28px;
+  font-family: "Open Sans", sans-serif;
+}
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+img {
+  max-width: 100%;
+}
+
+@each $val in $numbers {
+  .grid-col-sm-#{$val} {
+    @include small {
+      grid-template-columns: repeat($val, 1fr);
+    }
+  }
+}
+
+@each $val in $numbers {
+  .grid-col-md-#{$val} {
+    @include medium {
+      grid-template-columns: repeat($val, 1fr);
+    }
+  }
+}
+
+@each $val in $numbers {
+  .grid-col-lg-#{$val} {
+    @include large {
+      grid-template-columns: repeat($val, 1fr);
+    }
+  }
+}
+
+@each $val in $numbers {
+  .grid-col-xl-#{$val} {
+    @include extra-large {
+      grid-template-columns: repeat($val, 1fr);
+    }
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: auto;
+  padding: 0 30px;
+}
+
+.main {
+  overflow: hidden;
+}
+
+.grid {
+  display: grid;
+}
